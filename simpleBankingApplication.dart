@@ -19,16 +19,16 @@ void main() {
         print('4.Exit');
         print('Enter your choice number');
         // recieve choice number from user
-        int userChoice = int.parse(stdin.readLineSync()!);
+        String userChoice = stdin.readLineSync()!;
         // case 1 > Check Balance
-        if (userChoice == 1) {
+        if (userChoice == '1') {
           // the current account balance with two decimal places.
           accountBalance = double.parse(accountBalance.toStringAsFixed(2));
           //  Display the current account balance
           print('The current account balance = $accountBalance');
         }
         // case 2 > Deposit Money
-        else if (userChoice == 2) {
+        else if (userChoice == '2') {
           print('Enter the deposit amount');
           // recieve deposit amount from user
           double depositAmount = double.parse(stdin.readLineSync()!);
@@ -45,7 +45,7 @@ void main() {
           print('Done');
         }
         // case 3 >  Withdraw Money
-        else if (userChoice == 3) {
+        else if (userChoice == '3') {
           print('Enter the withdraw amount');
           // recieve the withdraw amount from user
           double withdrawAmount = double.parse(stdin.readLineSync()!);
@@ -66,7 +66,7 @@ void main() {
           }
         }
         // case 4 >> Exit
-        else if (userChoice == 4) {
+        else if (userChoice == '4') {
           break;
         }
         // case 5 >> user enters number isn't from choice number
