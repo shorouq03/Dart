@@ -4,8 +4,9 @@ void main() {
   // initialize an empty List
   List<String> groceryItems = [];
 
+  bool programOn = true;
   // menu-driven interface
-  while (true) {
+  while (programOn) {
     print('1.Add Item');
     print('2.Remove Item');
     print('3.View List');
@@ -72,6 +73,7 @@ void main() {
       // case 5 > Exit
       case '5':
         {
+          programOn = false;
           break;
         }
       // case 6 > in case user doesn't any case above
@@ -86,13 +88,11 @@ void main() {
 // Add Items fuction
 bool addItems(String addItem, List<String> groceryItems) {
   bool notEXist = true;
-  groceryItems.forEach(
-    (element) {
-      if (element.toUpperCase() == addItem.toUpperCase()) {
-        notEXist = false;
-      }
-    },
-  );
+  for (int i = 0; i < groceryItems.length; i++) {
+    if (groceryItems[i].toUpperCase() == addItem.toUpperCase()) {
+      notEXist = false;
+    }
+  }
 
   if (notEXist) {
     groceryItems.add(addItem);
